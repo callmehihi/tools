@@ -1,0 +1,27 @@
+name: 🚀 Auto Compile GeoSite Rules (SRS Format)
+
+on:
+  schedule:
+    - cron: '0 2 * * 1' 
+  
+  workflow_dispatch:
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 
+
+      - name: Make Script Executable and Run Compilation
+        run: chmod +x .github/scripts/compile_geosite.sh && .github/scripts/compile_geosite.sh
+
+      - name: Commit and Push Compiled Files to Repository
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          file_pattern: release/*.srs
+          commit_message: "🤖 CI: Auto compiled custom GeoSite rules [skip ci]"
+          branch: ${{ github.ref_name }}
+          commit_author: Automated Rule Compiler <actions@github.com>
