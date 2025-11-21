@@ -15,7 +15,7 @@ SRSC_URL="https://github.com/SagerNet/srsc/archive/refs/tags/v${SRSC_VERSION}.ta
 echo "Downloading srsc tool from ${SRSC_URL}"
 curl -L "$SRSC_URL" | tar zx -C /tmp
 
-SRSC_PATH="/tmp/sing-box-tools"
+SRSC_PATH="/tmp/srsc-${SRSC_VERSION}"
 
 mkdir -p /tmp/input
 mkdir -p release
