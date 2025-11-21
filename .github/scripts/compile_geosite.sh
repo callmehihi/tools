@@ -55,12 +55,13 @@ for RULE in "${RULES[@]}"; do
         exit 1
     fi
     
-    if [ -f "$LOCAL_PATH" ] && [ -s "$LOCAL_PATH" ]; then
-        echo "Compiling ${INPUT_FILE} to release/${OUTPUT_FILE}..."
-        "$SRSC_PATH" compile -i "$LOCAL_PATH" -o "release/${OUTPUT_FILE}" -t domain
+    if [ -s "$LOCAL_PATH" ]; then
+        echo "File downloaded successfully. Size: $(du -h "$LOCAL_PATH" | cut -f1)"
+        
+        "$SRSC_EXECUTABLE" compile -i "$LOCAL_PATH" -o "release/${OUTPUT_FILE}" -t domain
         echo "Compilation successful."
     else
-        echo "Error: Input file ${INPUT_FILE} is empty or failed to download. Skipping compilation."
+        echo "Error: Input file ${INPUT_FILE} is empty or invalid after download (Size 0). URL might be wrong or content failed."
         exit 1
     fi
 done
