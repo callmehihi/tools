@@ -1,7 +1,6 @@
 #!/bin/bash
 set -e
 
-SRSC_TAG="0.0.1-alpha.1" 
 SRSC_REPO="https://github.com/SagerNet/srsc.git"
 SRSC_BUILD_DIR="/tmp/srsc_source"
 SRSC_EXECUTABLE="/tmp/srsc"
@@ -15,7 +14,7 @@ RULES=(
 
 
 echo "1. Cloning srsc repository..."
-git clone --depth 1 --branch "$SRSC_TAG" "$SRSC_REPO" "$SRSC_BUILD_DIR"
+git clone --depth 1 --branch "dev" "$SRSC_REPO" "$SRSC_BUILD_DIR"
 
 echo "2. Compiling srsc tool..."
 cd "$SRSC_BUILD_DIR"
