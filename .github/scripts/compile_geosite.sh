@@ -27,7 +27,9 @@ if [ ! -x "$SRSC_EXECUTABLE" ]; then
     exit 1
 fi
 echo "srsc tool compiled successfully."
-
+echo "--- srsc Tool Usage Diagnosis ---"
+"$SRSC_EXECUTABLE" --help
+echo "---------------------------------"
 
 mkdir -p release
 
