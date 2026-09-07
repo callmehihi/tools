@@ -1,0 +1,9 @@
+#!name=personal_list
+#!desc=Rules:5 Created:2026-09-07
+
+[Rule]
+DOMAIN,dl.google.com,PROXY
+DOMAIN,tools.google.com,PROXY
+DOMAIN,www.gstatic.com,PROXY
+DOMAIN,fonts.googleapis.com,PROXY
+DOMAIN,fonts.gstatic.com,PROXY
