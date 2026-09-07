@@ -1,9 +1,0 @@
-#!name=top_priority
-#!desc=Rules:5 Created:2026-06-03
-
-[Rule]
-DOMAIN,dl.google.com,PROXY
-DOMAIN,tools.google.com,PROXY
-DOMAIN,www.gstatic.com,PROXY
-DOMAIN,fonts.googleapis.com,PROXY
-DOMAIN,fonts.gstatic.com,PROXY
